@@ -62,10 +62,13 @@ $stmt=$pdo->query($query);
 $tab=array();
 $i=0;
 while($data=$stmt->fetch()){
-	$tab[$i]['contenu'] = $data['contenu'];
+    $string = $data['contenu'];
+    $pattern = array('/https?:\/\/[\w]+\.[a-z\.]+\/?[\w]+?/', '/[a-zA-Z0-9\-\.]+@[a-zA-Z0-9\-\.]+\.[a-z]+/','/\S*#([\w]+\S*)/');
+    $replacement = array('<a href="$0"target="_blank">$0</a>', '<a href="mailto:$0">$0</a>','<a href="http://localhost/www/micro_blog3/index.php?contenu=$1">$0</a>');
+	$tab[$i]['contenu'] = preg_replace($pattern, $replacement, $string);
 	$tab[$i]['idMessage'] = $data['idMessage'];
 	$tab[$i]['pseudo'] = $data['pseudo'];
-	$tab[$i]['date'] = $data['date'];
+	$tab[$i]['date'] = date("d/m/Y H:i:s" ,$data['date']);
 	$i++;
 }
 

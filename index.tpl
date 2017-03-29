@@ -21,6 +21,18 @@
 
 	</form>
 </div>
+
+<div class="row apercu hidden" id="apercu" >              
+    <form>
+        <div class="col-sm-10">  
+            <div class="form-group">            
+               <p id="apercuexpreg" name="apercuexpreg" class="form-control"></p>
+               <input type="hidden" id="apercu1" name="apercu1" value="{$getID}"></input>     
+            </div>
+        </div>
+                       
+    </form>
+</div>
 {/if}
 
 {foreach from=$list_contenu item=contenu}
@@ -75,7 +87,37 @@
 </nav>
 </div>
 {/if}
+    
+<script>
+    $( document ).ready(function() {
+    $('message').keypress(function(){
+        
+    }
+});
+</script>
+
 
 
 {include file='includes/bas.tpl'}
 
+        
+    <script>
+$(function(){
+  $('#message').keyup(function(){
+     $('#apercu').removeClass("hidden");
+    
+     var msg1 = document.getElementById('message').value;
+    $.get('apercu.php',
+    {
+      message:msg1
+    },
+      function(data){
+        
+        document.getElementById("apercuexpreg").innerHTML = data;
+       
+      }
+      );
+  });
+});
+  
+</script>

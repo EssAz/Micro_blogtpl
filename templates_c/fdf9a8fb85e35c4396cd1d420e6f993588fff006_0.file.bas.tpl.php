@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-03-29 18:09:13
+  from "C:\xampp\htdocs\www\micro_blog3\includes\bas.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_58dbdc29cf0012_75547690',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'fdf9a8fb85e35c4396cd1d420e6f993588fff006' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\www\\micro_blog3\\includes\\bas.tpl',
+      1 => 1490803751,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_58dbdc29cf0012_75547690 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 </div>
 </section>
@@ -44,18 +68,27 @@
     </div>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <?php echo '<script'; ?>
+ src="vendor/jquery/jquery.min.js"><?php echo '</script'; ?>
+>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"><?php echo '</script'; ?>
+>
 
     <!-- Theme JavaScript -->
-    <script src="js/freelancer.min.js"></script>
+    <?php echo '<script'; ?>
+ src="js/freelancer.min.js"><?php echo '</script'; ?>
+>
 
-    <script>
+    <?php echo '<script'; ?>
+>
         $(document).ready(function() {
             $('#formConnexion').submit(function(){
                 var email =$('#email').val();
@@ -77,7 +110,10 @@
                 
             })
         });
-    </script>
+    <?php echo '</script'; ?>
+>
 </body>
 
 </html>
+<?php }
+}
